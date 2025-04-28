@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: "Arial", sans-serif;
+}
+
+.calculator {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 320px; /* Slightly wider maybe */
+  background-color: #e0e0e0;
+}
+
+/* NEW: Container for the display parts */
+.display-container {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px; /* Adjust padding */
+  text-align: right;
+  box-sizing: border-box;
+  min-height: 80px; /* Ensure enough height */
+  display: flex;
+  flex-direction: column; /* Stack history above main */
+  justify-content: space-between; /* Push history up, main down */
+}
+
+/* NEW: Style for the upper history/equation part */
+.display-history {
+  color: #aaa; /* Lighter color for history */
+  font-size: 0.9em; /* Smaller font */
+  height: 1.2em; /* Fixed height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* NEW: Style for the main number/result display */
+.display-main {
+  color: white;
+  font-size: 2.2em; /* Slightly smaller if needed */
+  font-weight: bold;
+  min-height: 1.5em; /* Ensure height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5em; /* Adjust line height */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 1px; /* Thin lines between buttons */
+  background-color: #ccc; /* Grid line color */
+}
+
+.button {
+  background-color: #f7f7f7;
+  border: none;
+  padding: 20px;
+  font-size: 1.4em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.button:active {
+  background-color: #ccc;
+}
+
+.button.function {
+  background-color: #d6d6d6;
+}
+.button.function:hover {
+  background-color: #c8c8c8;
+}
+.button.function:active {
+  background-color: #bbbbbb;
+}
+
+.button.operator {
+  background-color: #f0ad4e; /* Orange */
+  color: white;
+}
+.button.operator:hover {
+  background-color: #ec9a2a;
+}
+.button.operator:active {
+  background-color: #d58512;
+}
+
+.button.zero {
+  grid-column: span 2; /* Make 0 button wider */
+}
+
+.button.placeholder {
+  background-color: #e0e0e0; /* Match calculator background */
+  cursor: default;
+}
+.button.placeholder:hover {
+  background-color: #e0e0e0;
+}
