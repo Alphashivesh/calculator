@@ -23,7 +23,7 @@ export const parseNaturalLanguage = (input: string): string => {
   }
 
   // Handle percentage phrasing (e.g., "15% of 500" -> "0.15 * 500")
-  parsed = parsed.replace(/(\d+(?:\.\d+)?)%\s*of/g, (match, p1) => {
+  parsed = parsed.replace(/(\d+(?:\.\d+)?)%\s*of/g, (_match, p1) => {
     return `${parseFloat(p1) / 100} *`;
   });
 

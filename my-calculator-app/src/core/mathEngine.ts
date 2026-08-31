@@ -1,4 +1,4 @@
-import { evaluate, derivative, format, simplify, unit } from 'mathjs';
+import { evaluate, derivative, format, simplify} from 'mathjs';
 
 export const advancedEvaluate = (expression: string): string => {
   try {
